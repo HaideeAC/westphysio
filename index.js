@@ -22,4 +22,14 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // Map circle functionality
+  const mapCircle = document.querySelector(".map-circle");
+  if (mapCircle) {
+    mapCircle.addEventListener("click", () => {
+      // Open Google Maps with the direct link
+      const mapsUrl = "https://maps.app.goo.gl/BcTkEYrh1VNJJg9H6";
+      window.open(mapsUrl, "_blank");
+    });
+  }
 });
