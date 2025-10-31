@@ -94,27 +94,25 @@ h1 {
 
 .services {
   --marquee-duration: 25s;
-  --gap: 3rem;
+  --gap: 2rem;
 
   position: absolute;
   bottom: 10%;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
   padding: 2rem 0;
   background: rgba(0, 0, 0, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   z-index: 10;
   overflow: hidden;
-  display: flex;
   user-select: none;
+  white-space: nowrap;
 }
 
 .services__content {
-  display: flex;
-  gap: var(--gap);
-  flex-shrink: 0;
-  min-width: 100%;
+  display: inline-block;
   animation: scroll var(--marquee-duration) linear infinite;
 }
 
@@ -123,6 +121,8 @@ h1 {
   font-weight: 300;
   letter-spacing: clamp(0.2rem, 0.15rem + 0.25vw, 0.4rem);
   white-space: nowrap;
+  display: inline-block;
+  margin-right: var(--gap);
 }
 
 /* Pause animation on hover */
@@ -138,11 +138,11 @@ h1 {
 }
 
 @keyframes scroll {
-  from {
+  0% {
     transform: translateX(0);
   }
-  to {
-    transform: translateX(calc(-100% - var(--gap)));
+  100% {
+    transform: translateX(-50%);
   }
 }
 
