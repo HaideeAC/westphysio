@@ -93,28 +93,62 @@ h1 {
 }
 
 .services {
-  width: 80%;
-  display: flex;
-  justify-content: space-around;
-  padding: 2rem 3rem;
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  --marquee-duration: 25s;
+  --gap: 3rem;
+
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  width: 100%;
+  padding: 2rem 0;
+  background: rgba(0, 0, 0, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   z-index: 10;
+  overflow: hidden;
+  display: flex;
+  user-select: none;
 }
 
-.services div {
-  font-size: 1.1rem;
+.services__content {
+  display: flex;
+  gap: var(--gap);
+  flex-shrink: 0;
+  min-width: 100%;
+  animation: scroll var(--marquee-duration) linear infinite;
+}
+
+.services__content span {
+  font-size: clamp(0.875rem, 0.7rem + 0.5vw, 1.1rem);
   font-weight: 300;
-  letter-spacing: 0.05em;
+  letter-spacing: clamp(0.2rem, 0.15rem + 0.25vw, 0.4rem);
+  white-space: nowrap;
+}
+
+/* Pause animation on hover */
+.services:hover .services__content {
+  animation-play-state: paused;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .services__content {
+    animation: none;
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
 }
 
 .scroll-indicator {
   position: absolute;
-  bottom: 6rem;
+  bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
@@ -151,13 +185,8 @@ h1 {
   }
 
   .services {
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding: 1.5rem 2rem;
-  }
-
-  .services div {
-    font-size: 0.95rem;
+    --marquee-duration: 20s;
+    padding: 1.5rem 0;
   }
 }
 
@@ -173,8 +202,6 @@ h1 {
   }
 
   .services {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
+    --marquee-duration: 15s;
   }
 }
