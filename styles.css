@@ -28,11 +28,7 @@ header {
   align-items: center;
   padding: 2rem 3rem;
   z-index: 100;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.3) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: transparent;
 }
 
 .logo {
