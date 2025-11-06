@@ -13,11 +13,6 @@
   background: transparent;
 }
 
-.contact-page .logo,
-.contact-page nav a {
-  color: #000;
-}
-
 /* Layout Grid */
 .contact-container {
   display: grid;

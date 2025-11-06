@@ -11,14 +11,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Home page logic
     if (document.querySelector("main")) {
-      // Hero section with dark background
+      const servicesPhilosophy = document.querySelector(".services-philosophy");
+
+      // Check if we're in the dark philosophy section
+      if (servicesPhilosophy) {
+        const philoTop = servicesPhilosophy.offsetTop;
+        const philoBottom = philoTop + servicesPhilosophy.offsetHeight;
+
+        // In dark philosophy section - beige text
+        if (
+          scrollPosition + 100 >= philoTop &&
+          scrollPosition + 100 <= philoBottom
+        ) {
+          logo.style.color = "#f5f5f0";
+          navLinks.forEach((link) => (link.style.color = "#f5f5f0"));
+          return;
+        }
+      }
+
+      // Hero section with dark background - beige text
       if (scrollPosition < viewportHeight * 0.8) {
-        header.style.background = "transparent";
-        logo.style.color = "#fff";
-        navLinks.forEach((link) => (link.style.color = "#fff"));
+        logo.style.color = "#f5f5f0";
+        navLinks.forEach((link) => (link.style.color = "#f5f5f0"));
       } else {
-        // Scrolled past hero
-        header.style.background = "transparent";
+        // Scrolled past hero to beige section - black text
         logo.style.color = "#000";
         navLinks.forEach((link) => (link.style.color = "#000"));
       }
@@ -33,12 +49,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (heroSection) {
         const heroBottom = heroSection.offsetHeight;
 
-        // In hero section with black background - white text
+        // In hero section with black background - beige text
         if (scrollPosition < heroBottom - 100) {
-          header.style.background = "transparent";
-          logo.style.color = "#fff";
-          navLinks.forEach((link) => (link.style.color = "#fff"));
-          return; // Exit early if in hero
+          logo.style.color = "#f5f5f0";
+          navLinks.forEach((link) => (link.style.color = "#f5f5f0"));
+          return;
         }
       }
 
@@ -51,32 +66,29 @@ document.addEventListener("DOMContentLoaded", () => {
           scrollPosition + 100 >= philosophyTop &&
           scrollPosition + 100 <= philosophyBottom
         ) {
-          // In dark section
-          header.style.background = "transparent";
+          // In dark section - beige text
           logo.style.color = "#f5f5f0";
           navLinks.forEach((link) => (link.style.color = "#f5f5f0"));
         } else {
-          // In light section
-          header.style.background = "transparent";
+          // In light section - black text
           logo.style.color = "#000";
           navLinks.forEach((link) => (link.style.color = "#000"));
         }
       } else {
-        // No philosophy section, just handle scroll
-        header.style.background = "transparent";
+        // No philosophy section - black text
         logo.style.color = "#000";
         navLinks.forEach((link) => (link.style.color = "#000"));
       }
     }
 
-    // Contact page - always light background
+    // Contact page - beige background, black text
     if (document.querySelector(".contact-page")) {
-      header.style.background = "transparent";
+      logo.style.color = "#000";
+      navLinks.forEach((link) => (link.style.color = "#000"));
     }
   }
 
   // Smooth transitions
-  header.style.transition = "background 0.3s ease, backdrop-filter 0.3s ease";
   logo.style.transition = "color 0.3s ease";
   navLinks.forEach((link) => {
     link.style.transition = "color 0.3s ease";

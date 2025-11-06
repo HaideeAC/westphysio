@@ -93,7 +93,6 @@
 
 .conditions-image:hover {
   filter: grayscale(0%);
-  transform: scale(1.02);
 }
 
 /* Scroll-driven animations for conditions */
