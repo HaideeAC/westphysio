@@ -1,0 +1,530 @@
+/* ==================== */
+/* SERVICES SECTION     */
+/* ==================== */
+
+/* Services Page/Section Base */
+.services-section {
+  background-color: #f5f5f0;
+  color: #000;
+}
+
+/* Conditions Grid Section */
+.services-conditions {
+  padding: 8rem 3rem;
+  background-color: #f5f5f0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.conditions-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.conditions-left {
+  position: sticky;
+  top: 150px;
+}
+
+.conditions-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  font-family: "Times New Roman", serif;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  color: #000;
+}
+
+.conditions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.condition-item {
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: #000;
+  font-family: "Times New Roman", serif;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.condition-item:hover {
+  opacity: 0.5;
+  padding-left: 1rem;
+}
+
+.conditions-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.conditions-image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.03) 100%);
+  pointer-events: none;
+}
+
+.conditions-image-wrapper:hover {
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.conditions-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(10%) contrast(1.05);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.conditions-image:hover {
+  filter: grayscale(0%);
+  transform: scale(1.02);
+}
+
+/* Scroll-driven animations for conditions */
+@supports (animation-timeline: view()) {
+  .conditions-title {
+    animation: slide-left linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  .condition-item:nth-child(1) {
+    animation: slide-up-stagger linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .condition-item:nth-child(2) {
+    animation: slide-up-stagger linear forwards;
+    animation-timeline: view();
+    animation-range: entry 10% cover 40%;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .condition-item:nth-child(3) {
+    animation: slide-up-stagger linear forwards;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .condition-item:nth-child(4) {
+    animation: slide-up-stagger linear forwards;
+    animation-timeline: view();
+    animation-range: entry 30% cover 40%;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .condition-item:nth-child(5) {
+    animation: slide-up-stagger linear forwards;
+    animation-timeline: view();
+    animation-range: entry 40% cover 40%;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .condition-item:nth-child(6) {
+    animation: slide-up-stagger linear forwards;
+    animation-timeline: view();
+    animation-range: entry 50% cover 40%;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .conditions-image-wrapper {
+    animation: slide-right linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+    opacity: 0;
+    transform: translateX(80px);
+  }
+}
+
+/* Philosophy Section - Dark Background */
+.services-philosophy {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 3rem;
+  background-color: #000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.philosophy-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.philosophy-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.philosophy-paragraph {
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  line-height: 1.8;
+  color: #f5f5f0;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+/* Scroll-driven animations for philosophy */
+@supports (animation-timeline: view()) {
+  .philosophy-paragraph:nth-child(1) {
+    animation: slide-up linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .philosophy-paragraph:nth-child(2) {
+    animation: slide-up linear forwards;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .philosophy-paragraph:nth-child(3) {
+    animation: slide-up linear forwards;
+    animation-timeline: view();
+    animation-range: entry 40% cover 40%;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+/* Offerings Section with Image */
+.services-offerings {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 10rem 4rem 4rem 4rem;
+  background-color: #f5f5f0;
+}
+
+.offerings-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.offerings-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0 auto;
+}
+
+.offerings-image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.03) 100%);
+  pointer-events: none;
+}
+
+.offerings-image-wrapper:hover {
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.offerings-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(10%) contrast(1.05);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.offerings-image:hover {
+  filter: grayscale(0%);
+  transform: scale(1.02);
+}
+
+.offerings-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 2rem;
+}
+
+.offerings-title {
+  font-size: clamp(3rem, 5.5vw, 5rem);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  font-family: "Times New Roman", serif;
+  line-height: 1.1;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+.offerings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.offering-item {
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: #000;
+  font-family: "Times New Roman", serif;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.offering-item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.offering-item:hover {
+  opacity: 0.5;
+  padding-left: 2.5rem;
+}
+
+.offering-item:hover::before {
+  left: 0.5rem;
+}
+
+/* Scroll-driven animations for offerings */
+@supports (animation-timeline: view()) {
+  .offerings-image-wrapper {
+    animation: slide-left-far linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  .offerings-title {
+    animation: slide-right linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  .offering-item:nth-child(1) {
+    animation: slide-up-stagger linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .offering-item:nth-child(2) {
+    animation: slide-up-stagger linear forwards;
+    animation-timeline: view();
+    animation-range: entry 5% cover 30%;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .offering-item:nth-child(3) {
+    animation: slide-up-stagger linear forwards;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .offering-item:nth-child(4) {
+    animation: slide-up-stagger linear forwards;
+    animation-timeline: view();
+    animation-range: entry 15% cover 30%;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .offering-item:nth-child(5) {
+    animation: slide-up-stagger linear forwards;
+    animation-timeline: view();
+    animation-range: entry 15% cover 25%;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .offering-item:nth-child(6) {
+    animation: slide-up-stagger linear forwards;
+    animation-timeline: view();
+    animation-range: entry 20% cover 20%;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+/* Keyframe Animations */
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up-stagger {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-left {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-left-far {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ==================== */
+/* RESPONSIVE: SERVICES */
+/* ==================== */
+
+@media (max-width: 1200px) {
+  .conditions-container,
+  .offerings-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .conditions-left {
+    position: static;
+  }
+
+  .conditions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .services-conditions,
+  .services-philosophy,
+  .services-offerings {
+    padding: 6rem 2rem 3rem 2rem;
+  }
+
+  .offerings-container {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-conditions,
+  .services-philosophy,
+  .services-offerings {
+    padding: 4rem 1.5rem 2rem 1.5rem;
+  }
+
+  .services-offerings {
+    padding-top: 6rem;
+  }
+
+  .conditions-title,
+  .offerings-title {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  .condition-item,
+  .offering-item {
+    font-size: clamp(1rem, 4vw, 1.3rem);
+  }
+
+  .philosophy-paragraph {
+    font-size: clamp(1rem, 4vw, 1.3rem);
+  }
+
+  .conditions-image-wrapper,
+  .offerings-image-wrapper {
+    aspect-ratio: 1/1;
+  }
+
+  .offerings-container {
+    gap: 2rem;
+  }
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .conditions-title,
+  .condition-item,
+  .conditions-image-wrapper,
+  .philosophy-paragraph,
+  .offerings-image-wrapper,
+  .offerings-title,
+  .offering-item {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .conditions-image,
+  .offerings-image,
+  .condition-item,
+  .offering-item {
+    transition: none;
+  }
+}
